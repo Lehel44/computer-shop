@@ -1,0 +1,31 @@
+﻿@page
+@model ComputerShop.Pages.ShoppingCartModel
+@{
+    ViewData["Title"] = "ShoppingCart";
+}
+@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+
+<h2>ShoppingCart</h2>
+
+<table class="table">
+    <tr>
+        <th>Product</th>
+        <th>Quantity</th>
+        <th>Price</th>
+    </tr>
+    @foreach (var item in Model.ShoppingCartData)
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Product.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.quantity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.price)
+        </td>
+    </tr>
+    }
+</table>

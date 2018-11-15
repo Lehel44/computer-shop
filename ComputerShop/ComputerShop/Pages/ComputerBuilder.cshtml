@@ -1,0 +1,74 @@
+﻿@page
+@model ComputerShop.Pages.ComputerBuilderModel
+@{
+    ViewData["Title"] = "ComputerBuilder";
+}
+
+<h1>Build your own computer</h1>
+
+<form asp-page-handler="cpu" method="post">
+    <div class="form-group">
+        <label class="control-label">Select CPU</label>
+        <br />
+        <select asp-for="CpuId" asp-items="@(new SelectList(Model.Cpus, "ID", "Name", "Price"))">
+            <option value="">Choose</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <button class="btn btn-default">Choose</button>
+    </div>
+
+    <label class="control-label">Selected CPU</label>
+</form>
+
+<form asp-page-handler="vga" method="post">
+    <div class="form-group">
+        <label class="control-label">Select VGA</label>
+        <br />
+        <select asp-for="VgaId" asp-items="@(new SelectList(Model.Vgas, "ID", "Name", "Price"))">
+            <option value="">Choose</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <button class="btn btn-default">Choose</button>
+    </div>
+</form>
+
+<form asp-page-handler="memory" method="post">
+    <div class="form-group">
+        <label class="control-label">Select Memory</label>
+        <br />
+        <select asp-for="MemoryId" asp-items="@(new SelectList(Model.Memories, "ID", "Name", "Price"))">
+            <option value="">Choose</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <button class="btn btn-default">Choose</button>
+    </div>
+</form>
+
+<form asp-page-handler="monitor" method="post">
+    <div class="form-group">
+        <label class="control-label">Select Monitor</label>
+        <br/>
+        <select asp-for="MonitorId" asp-items="@(new SelectList(Model.Monitors, "ID", "Name", "Price"))">
+            <option value="">Choose</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <button class="btn btn-default">Choose</button>
+    </div>
+</form>
+
+<form asp-page-handler="motherboard" method="post">
+    <div class="form-group">
+        <label class="control-label">Select Motherboard</label>
+        <br />
+        <select asp-for="MotherboardId" asp-items="@(new SelectList(Model.Motherboards, "ID", "Name", "Price"))">
+            <option value="">Choose</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <button class="btn btn-default">Choose</button>
+    </div>
+</form>
