@@ -80,17 +80,17 @@ using ComputerShop_withAuth.Data;
             WriteLiteral("<h1>Build your own computer</h1>\r\n<div class=\"row\">\r\n    <div class=\"col-md-4\">\r\n        ");
             EndContext();
             BeginContext(204, 712, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "86332fa92d20424a8b9de761d4d61352", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6765538fcfbe4d769ac487b5bfe44a32", async() => {
                 BeginContext(247, 145, true);
                 WriteLiteral("\r\n            <div class=\"form-group\">\r\n                <label class=\"control-label\">Select CPU</label>\r\n                <br />\r\n                ");
                 EndContext();
                 BeginContext(392, 267, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2e1a7fb92da042e29f76839ce241cd8e", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "21726c5568b84869bc91852d4e08b87d", async() => {
                     BeginContext(578, 22, true);
                     WriteLiteral("\r\n                    ");
                     EndContext();
                     BeginContext(600, 32, false);
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b327d1172fc047559e4cd9574a2c415d", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4d683b1c51dc431597faedb8ca4a1db3", async() => {
                         BeginContext(617, 6, true);
                         WriteLiteral("Choose");
                         EndContext();
@@ -177,17 +177,17 @@ WriteAttributeValue("", 777, !(Model.SelectedCpuName == null || Model.SelectedCp
             WriteLiteral("\r\n        ");
             EndContext();
             BeginContext(926, 712, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "32ed67479b2f4f7586f02da7e65095b1", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a6f6c47c1d744468ae33514940cc525f", async() => {
                 BeginContext(969, 145, true);
                 WriteLiteral("\r\n            <div class=\"form-group\">\r\n                <label class=\"control-label\">Select VGA</label>\r\n                <br />\r\n                ");
                 EndContext();
                 BeginContext(1114, 267, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0096411fdd8d4e43b4ad167fc8d0932f", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3050ca25c9204b8ab755a15f6830784a", async() => {
                     BeginContext(1300, 22, true);
                     WriteLiteral("\r\n                    ");
                     EndContext();
                     BeginContext(1322, 32, false);
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "46cc299c52e04cb683376d0e4a9528cb", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8a9effe4c954b8f9bae381074559fa1", async() => {
                         BeginContext(1339, 6, true);
                         WriteLiteral("Choose");
                         EndContext();
@@ -274,17 +274,17 @@ WriteAttributeValue("", 1499, !(Model.SelectedVgaName == null || Model.SelectedV
             WriteLiteral("\r\n        ");
             EndContext();
             BeginContext(1648, 737, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2c242273e3154977a320e1c5a7d4025c", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "35925fae33f84b698a5d6524f2c6e4fd", async() => {
                 BeginContext(1694, 148, true);
                 WriteLiteral("\r\n            <div class=\"form-group\">\r\n                <label class=\"control-label\">Select Memory</label>\r\n                <br />\r\n                ");
                 EndContext();
                 BeginContext(1842, 280, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6935fc6a1f5c4af58a5ca1b6c787299a", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0ec99931f2ae4447bc51e1b309d374ff", async() => {
                     BeginContext(2041, 22, true);
                     WriteLiteral("\r\n                    ");
                     EndContext();
                     BeginContext(2063, 32, false);
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ae65f90f128a4ecb8a9f1eee99d2baed", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9d75cb731e7944bf945584f4b05006d7", async() => {
                         BeginContext(2080, 6, true);
                         WriteLiteral("Choose");
                         EndContext();
@@ -371,17 +371,17 @@ WriteAttributeValue("", 2240, !(Model.SelectedMemoryName == null || Model.Select
             WriteLiteral("\r\n        ");
             EndContext();
             BeginContext(2395, 744, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7f0424e82ec245b2a2112b06577919bb", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "78a6fc009b334a4f98bd356e4c19394f", async() => {
                 BeginContext(2442, 149, true);
                 WriteLiteral("\r\n            <div class=\"form-group\">\r\n                <label class=\"control-label\">Select Monitor</label>\r\n                <br />\r\n                ");
                 EndContext();
                 BeginContext(2591, 283, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "17e8630318c24d928455de09289cafa7", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f47b835f1f444f84819cb3cc78f3f1c7", async() => {
                     BeginContext(2793, 22, true);
                     WriteLiteral("\r\n                    ");
                     EndContext();
                     BeginContext(2815, 32, false);
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "97c61eba410749d1a6304ddfc868353d", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f0712e5048ed4cc2a92f7b25bd5c8352", async() => {
                         BeginContext(2832, 6, true);
                         WriteLiteral("Choose");
                         EndContext();
@@ -468,17 +468,17 @@ WriteAttributeValue("", 2992, !(Model.SelectedMonitorName == null || Model.Selec
             WriteLiteral("\r\n        ");
             EndContext();
             BeginContext(3149, 776, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f00e07665ef04f49a675ac97e089b30b", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bb4b3817f71e45049d7e75dff8d49309", async() => {
                 BeginContext(3200, 153, true);
                 WriteLiteral("\r\n            <div class=\"form-group\">\r\n                <label class=\"control-label\">Select Motherboard</label>\r\n                <br />\r\n                ");
                 EndContext();
                 BeginContext(3353, 299, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4211c4a1fc454b6db5874bd5afd08e04", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bca0b72923e9447d8a199ec29c0465f7", async() => {
                     BeginContext(3571, 22, true);
                     WriteLiteral("\r\n                    ");
                     EndContext();
                     BeginContext(3593, 32, false);
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9a204d347f644b43ac9864d0470d522f", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "649664870f964a05b1b7c1c6f6be7eba", async() => {
                         BeginContext(3610, 6, true);
                         WriteLiteral("Choose");
                         EndContext();
@@ -565,7 +565,7 @@ WriteAttributeValue("", 3770, !(Model.SelectedMotherboardName == null || Model.S
             WriteLiteral("\r\n    </div>\r\n    <div class=\"col-md-4\">\r\n        <div>\r\n            ");
             EndContext();
             BeginContext(3994, 413, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fa57e8c3e5d14e1b9704957b1b1c27d4", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "834846ce969c4205815a442a96c15db5", async() => {
                 BeginContext(4041, 66, true);
                 WriteLiteral("\r\n                <p>Selected CPU</p>\r\n                <p><strong>");
                 EndContext();
@@ -611,7 +611,7 @@ WriteAttributeValue("", 4274, (Model.SelectedCpuName == null || Model.SelectedCp
             WriteLiteral("\r\n        </div>\r\n        <div>\r\n            ");
             EndContext();
             BeginContext(4452, 413, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a33d92bfdb3d4eaabdbae9f7e329e41f", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "aefc2edfed0e4c0d990673c2a8b27f90", async() => {
                 BeginContext(4499, 66, true);
                 WriteLiteral("\r\n                <p>Selected VGA</p>\r\n                <p><strong>");
                 EndContext();
@@ -657,7 +657,7 @@ WriteAttributeValue("", 4732, (Model.SelectedVgaName == null || Model.SelectedVg
             WriteLiteral("\r\n        </div>\r\n        <div>\r\n            ");
             EndContext();
             BeginContext(4910, 428, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "61950d288b7a4d6ab5428c76c5686b18", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fd3ea9c960084f1891101b41ba7fec37", async() => {
                 BeginContext(4960, 69, true);
                 WriteLiteral("\r\n                <p>Selected Memory</p>\r\n                <p><strong>");
                 EndContext();
@@ -703,7 +703,7 @@ WriteAttributeValue("", 5199, (Model.SelectedMemoryName == null || Model.Selecte
             WriteLiteral("\r\n        </div>\r\n        <div>\r\n            ");
             EndContext();
             BeginContext(5383, 433, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "541b9953245c473697342277e0eba9ae", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "621d8a191c514275b791c7d0a86a62c4", async() => {
                 BeginContext(5434, 70, true);
                 WriteLiteral("\r\n                <p>Selected Monitor</p>\r\n                <p><strong>");
                 EndContext();
@@ -749,7 +749,7 @@ WriteAttributeValue("", 5675, (Model.SelectedMonitorName == null || Model.Select
             WriteLiteral("\r\n        </div>\r\n        <div>\r\n            ");
             EndContext();
             BeginContext(5861, 453, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c40c053ec25c4152b802fe6e4cdeac91", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "75e1aa8685a743c3801f6d8dfee72490", async() => {
                 BeginContext(5916, 74, true);
                 WriteLiteral("\r\n                <p>Selected Motherboard</p>\r\n                <p><strong>");
                 EndContext();
@@ -795,7 +795,7 @@ WriteAttributeValue("", 6165, (Model.SelectedMotherboardName == null || Model.Se
             WriteLiteral("\r\n        </div>\r\n        <hr style=\"width: 100%; color: black; height: 1px; background-color:black;\" />\r\n        <div>\r\n            ");
             EndContext();
             BeginContext(6447, 292, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "34b88b8243614af5a1f2ebf6e33ad8dc", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3657f0f023e14c52af22ce56f8ee840b", async() => {
                 BeginContext(6501, 135, true);
                 WriteLiteral("\r\n                <div class=\"form-group\">\r\n                    <input type=\"submit\" value=\"Add to Cart\" class=\"btn btn-primary btn-lg\"");
                 EndContext();

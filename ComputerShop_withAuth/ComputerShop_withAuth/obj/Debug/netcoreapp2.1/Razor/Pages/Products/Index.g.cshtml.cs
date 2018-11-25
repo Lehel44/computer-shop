@@ -72,7 +72,7 @@ using ComputerShop_withAuth.Data;
             WriteLiteral("\n<h2>Products</h2>\n\n<p>\n    ");
             EndContext();
             BeginContext(128, 35, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9134775a2f4746b7b17cddb66c467a33", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7438df90979a4269912ab898d0d4d0cc", async() => {
                 BeginContext(149, 10, true);
                 WriteLiteral("Create New");
                 EndContext();
@@ -162,7 +162,7 @@ using ComputerShop_withAuth.Data;
             WriteLiteral("\n            </td>\n            <td>\n                ");
             EndContext();
             BeginContext(954, 53, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4e0ec51677a14c7eb8a481a2724a9889", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f2501e143cc043dfbec2d84bc281711d", async() => {
                 BeginContext(999, 4, true);
                 WriteLiteral("Edit");
                 EndContext();
@@ -197,7 +197,7 @@ using ComputerShop_withAuth.Data;
             WriteLiteral(" |\n                ");
             EndContext();
             BeginContext(1026, 59, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "636095e1686d4a4d8ec6164ba3bce186", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "31953a3a5a48452a83b28f4bbe88cdc2", async() => {
                 BeginContext(1074, 7, true);
                 WriteLiteral("Details");
                 EndContext();
@@ -232,7 +232,7 @@ using ComputerShop_withAuth.Data;
             WriteLiteral(" |\n                ");
             EndContext();
             BeginContext(1104, 57, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "15026281c2cf438e8fc44ac96898153b", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "421531f908f345f28797bad1f0a07d30", async() => {
                 BeginContext(1151, 6, true);
                 WriteLiteral("Delete");
                 EndContext();
@@ -267,7 +267,7 @@ using ComputerShop_withAuth.Data;
             WriteLiteral(" |\n                ");
             EndContext();
             BeginContext(1180, 74, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "37f7ccc90c18410aaed539f2c4e96ddb", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bc7236656030497ab7eebb99b07e6927", async() => {
                 BeginContext(1230, 20, true);
                 WriteLiteral("Add to shopping cart");
                 EndContext();
