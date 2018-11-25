@@ -1,0 +1,34 @@
+﻿@page
+@model ComputerShop_withAuth.Pages.Compatibles.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Compatible</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Compatible.Product)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Compatible.Product.ID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Compatible.CompatibleProduct)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Compatible.CompatibleProduct.ID)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Compatible.ID" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>

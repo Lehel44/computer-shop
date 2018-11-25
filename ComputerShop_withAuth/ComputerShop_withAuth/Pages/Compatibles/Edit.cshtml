@@ -1,0 +1,40 @@
+﻿@page
+@model ComputerShop_withAuth.Pages.Compatibles.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<h4>Compatible</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Compatible.ID" />
+            <div class="form-group">
+                <label asp-for="Compatible.ProductId" class="control-label"></label>
+                <select asp-for="Compatible.ProductId" class="form-control" asp-items="ViewBag.ProductId"></select>
+                <span asp-validation-for="Compatible.ProductId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Compatible.CompatibleProductId" class="control-label"></label>
+                <select asp-for="Compatible.CompatibleProductId" class="form-control" asp-items="ViewBag.CompatibleProductId"></select>
+                <span asp-validation-for="Compatible.CompatibleProductId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
