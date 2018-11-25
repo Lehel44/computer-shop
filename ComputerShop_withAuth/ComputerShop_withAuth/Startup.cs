@@ -61,6 +61,7 @@ namespace ComputerShop_withAuth
                 {
                     options.Conventions.AuthorizeFolder("/Categories", "AdminRole");
                     options.Conventions.AuthorizeFolder("/Compatibles", "AdminRole");
+                    options.Conventions.AuthorizeFolder("/Customers", "AdminRole");
                     options.Conventions.AuthorizePage("/Products/Create", "AdminRole");
                     options.Conventions.AuthorizePage("/Products/Delete", "AdminRole");
                     options.Conventions.AuthorizePage("/Products/Edit", "AdminRole");
