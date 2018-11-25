@@ -68,6 +68,28 @@ namespace ComputerShop.Pages
 
         public IList<Compatible> Compatibles { get; set; }
 
+        // Selected things.
+
+        [BindProperty]
+        public String SelectedCpuName { get; set; }
+
+        [BindProperty]
+        public String SelectedVgaName { get; set; }
+
+        [BindProperty]
+        public String SelectedMemoryName { get; set; }
+
+        [BindProperty]
+        public String SelectedMonitorName { get; set; }
+
+        [BindProperty]
+        public String SelectedMotherboardName { get; set; }
+
+        // If all components are selected.
+
+        [BindProperty]
+        public bool IsAllSelected { get; set; }
+
         public ComputerBuilderModel(ShopContext _context, IHttpContextAccessor httpContextAccessor)
         {
             context = _context;
@@ -103,11 +125,33 @@ namespace ComputerShop.Pages
 
             // Get ids from session
             if (session.Get("computer") != null)
-            {
+            { 
+
                 var data = session.GetString("computer");
                 if (data != null && data != "")
                 {
                     ComputerDTO computer = JsonConvert.DeserializeObject<ComputerDTO>(data);
+
+                    // If all parts are selected, then the user can order the computer.
+                    IsAllSelected = computer.CpuId != null && computer.VgaId != null && computer.MemoryId != null
+                        && computer.MonitorId != null && computer.MotherboardId != null;
+
+                    // Set selected parts.
+
+                    Product selectedCpu = context.Product.FirstOrDefault(m => m.ID == computer.CpuId);
+                    SelectedCpuName = selectedCpu?.Name ?? "";
+
+                    Product selectedVga = context.Product.FirstOrDefault(m => m.ID == computer.VgaId);
+                    SelectedVgaName = selectedVga?.Name ?? "";
+
+                    Product selectedMemory = context.Product.FirstOrDefault(m => m.ID == computer.MemoryId);
+                    SelectedMemoryName = selectedMemory?.Name ?? "";
+
+                    Product selectedMonitor = context.Product.FirstOrDefault(m => m.ID == computer.MonitorId);
+                    SelectedMonitorName = selectedMonitor?.Name ?? "";
+
+                    Product selectedMotherboard = context.Product.FirstOrDefault(m => m.ID == computer.MotherboardId);
+                    SelectedMotherboardName = selectedMotherboard?.Name ?? "";
 
                     // CPU - Motherboard
                     if (computer.CpuId != null)
@@ -126,6 +170,7 @@ namespace ComputerShop.Pages
                     if (computer.MotherboardId != null)
                     {
 
+                        // Sort lists.
                         var cpuQuery =
                            from compatible in context.Compatible
                            join product in context.Product on compatible.ProductId equals product.ID
@@ -207,35 +252,116 @@ namespace ComputerShop.Pages
 
         public IActionResult OnPostCpu()
         {
-            AddComputerToSession(CpuId, Component.CPU);
+            AddComponentToSession(CpuId, Component.CPU);
             return RedirectToAction("OnGetAsync");
         }
 
         public IActionResult OnPostVga()
         {
-            AddComputerToSession(VgaId, Component.VGA);
+            AddComponentToSession(VgaId, Component.VGA);
             return RedirectToAction("OnGetAsync");
         }
 
         public IActionResult OnPostMemory()
         {
-            AddComputerToSession(MemoryId, Component.MEMORY);
+            AddComponentToSession(MemoryId, Component.MEMORY);
             return RedirectToAction("OnGetAsync");
         }
 
         public IActionResult OnPostMonitor()
         {
-            AddComputerToSession(MonitorId, Component.MONITOR);
+            AddComponentToSession(MonitorId, Component.MONITOR);
             return RedirectToAction("OnGetAsync");
         }
 
         public IActionResult OnPostMotherboard()
         {
-            AddComputerToSession(MotherboardId, Component.MOTHERBOARD);
+            AddComponentToSession(MotherboardId, Component.MOTHERBOARD);
             return RedirectToAction("OnGetAsync");
         }
 
-        public void AddComputerToSession(int id, Component component)
+        public IActionResult OnPostDropCpu()
+        {
+            RemoveComponentFromSession(Component.CPU);
+            SelectedCpuName = null;
+            return RedirectToAction("OnGetAsync");
+        }
+
+        public IActionResult OnPostDropVga()
+        {
+            RemoveComponentFromSession(Component.VGA);
+            SelectedVgaName = null;
+            return RedirectToAction("OnGetAsync");
+        }
+
+        public IActionResult OnPostDropMemory()
+        {
+            RemoveComponentFromSession(Component.MEMORY);
+            SelectedMemoryName = null;
+            return RedirectToAction("OnGetAsync");
+        }
+
+        public IActionResult OnPostDropMonitor()
+        {
+            RemoveComponentFromSession(Component.MONITOR);
+            SelectedMonitorName = null;
+            return RedirectToAction("OnGetAsync");
+        }
+
+        public IActionResult OnPostDropMotherboard()
+        {
+            RemoveComponentFromSession(Component.MOTHERBOARD);
+            SelectedMotherboardName = null;
+            return RedirectToAction("OnGetAsync");
+        }
+
+        // Add computer components to the cart.
+
+        public IActionResult OnPostComputerToCart()
+        {
+            var computerData = session.GetString("computer");
+            ComputerDTO computer = JsonConvert.DeserializeObject<ComputerDTO>(computerData);
+
+            Product cpu = context.Product.FirstOrDefault(m => m.ID == computer.CpuId);
+            Product vga = context.Product.FirstOrDefault(m => m.ID == computer.VgaId);
+            Product memory = context.Product.FirstOrDefault(m => m.ID == computer.MemoryId);
+            Product monitor = context.Product.FirstOrDefault(m => m.ID == computer.MonitorId);
+            Product motherboard = context.Product.FirstOrDefault(m => m.ID == computer.MotherboardId);
+
+            ProductOrderDTO cpuDto = new ProductOrderDTO(cpu, 1);
+            ProductOrderDTO vgaDto = new ProductOrderDTO(vga, 1);
+            ProductOrderDTO memoryDto = new ProductOrderDTO(memory, 1);
+            ProductOrderDTO monitorDto = new ProductOrderDTO(monitor, 1);
+            ProductOrderDTO motherboardDto = new ProductOrderDTO(motherboard, 1);
+
+            ShoppingCartDTO cartDto = null;
+            var cartData = session.GetString("cart");
+            if (cartData != null)
+            {
+                cartDto = JsonConvert.DeserializeObject<ShoppingCartDTO>(cartData);
+            }
+            else
+            {
+                cartDto = new ShoppingCartDTO();
+            }
+
+            cartDto.Add(cpuDto);
+            cartDto.Add(vgaDto);
+            cartDto.Add(memoryDto);
+            cartDto.Add(monitorDto);
+            cartDto.Add(motherboardDto);
+
+            // Save cart.
+            var newCart = JsonConvert.SerializeObject(cartDto);
+            session.SetString("cart", newCart);
+
+            // Delete computer.
+            session.Remove("computer");
+
+            return RedirectToAction("OnGetAsync");
+        }
+
+        public void AddComponentToSession(int id, Component component)
         {
             if (session.Get("computer") == null)
             {
@@ -272,6 +398,43 @@ namespace ComputerShop.Pages
                     break;
                 case Component.MONITOR:
                     computer.MonitorId = id;
+                    break;
+                default:
+                    break;
+            }
+            return computer;
+        }
+
+        public void RemoveComponentFromSession(Component component)
+        {
+            if (session.Get("computer") != null)
+            {
+                var data = session.GetString("computer");
+                ComputerDTO computer = JsonConvert.DeserializeObject<ComputerDTO>(data);
+                computer = SetComponentToNull(computer, component);
+                var newData = JsonConvert.SerializeObject(computer);
+                session.SetString("computer", newData);
+            }
+        }
+
+        public ComputerDTO SetComponentToNull(ComputerDTO computer, Component component)
+        {
+            switch (component)
+            {
+                case Component.CPU:
+                    computer.CpuId = null;
+                    break;
+                case Component.MEMORY:
+                    computer.MemoryId = null;
+                    break;
+                case Component.VGA:
+                    computer.VgaId = null;
+                    break;
+                case Component.MOTHERBOARD:
+                    computer.MotherboardId = null;
+                    break;
+                case Component.MONITOR:
+                    computer.MonitorId = null;
                     break;
                 default:
                     break;

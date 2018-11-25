@@ -17,7 +17,6 @@ namespace ComputerShop.Pages.Products
     {
         private readonly ShopContext _context;
         private readonly ISession session;
-        private static int SESSION_KEY = 0;
 
         public AddToCartModel(ShopContext context, IHttpContextAccessor httpContextAccessor)
         {
@@ -47,10 +46,14 @@ namespace ComputerShop.Pages.Products
 
         public async Task<IActionResult> OnPostAsync(int? id)
         {
+            if (quantity == 0)
+            {
+                return Page();
+            }
             Product = await _context.Product.FirstOrDefaultAsync(m => m.ID == id);
-
-            var data = JsonConvert.SerializeObject(new ShoppingCartDTO(Product, quantity));
-            session.SetString(SESSION_KEY++.ToString(), data);
+            var ProductOrderDto = new ProductOrderDTO(Product, quantity);
+            var data = JsonConvert.SerializeObject(new ShoppingCartDTO(ProductOrderDto));
+            session.SetString("cart", data);
 
             return Page();
         }

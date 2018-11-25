@@ -8,6 +8,7 @@ namespace ComputerShop.Models
 {
     public class Product
     {
+        [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int ID { get; set; }
         public string Name { get; set; }
         public int Price { get; set; }

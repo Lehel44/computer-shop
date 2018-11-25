@@ -5,70 +5,127 @@
 }
 
 <h1>Build your own computer</h1>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-page-handler="cpu" method="post">
+            <div class="form-group">
+                <label class="control-label">Select CPU</label>
+                <br />
+                <select asp-for="CpuId" asp-items="@(new SelectList(Model.Cpus, "ID", "Name", "Price"))" disabled="@(!(Model.SelectedCpuName == null || Model.SelectedCpuName == "")? "disabled" : null)">
+                    <option value="">Choose</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-default" disabled="@(!(Model.SelectedCpuName == null || Model.SelectedCpuName == "")? "disabled" : null)">Choose</button>
+            </div>
+        </form>
 
-<form asp-page-handler="cpu" method="post">
-    <div class="form-group">
-        <label class="control-label">Select CPU</label>
-        <br />
-        <select asp-for="CpuId" asp-items="@(new SelectList(Model.Cpus, "ID", "Name", "Price"))">
-            <option value="">Choose</option>
-        </select>
-    </div>
-    <div class="form-group">
-        <button class="btn btn-default">Choose</button>
+        <form asp-page-handler="vga" method="post">
+            <div class="form-group">
+                <label class="control-label">Select VGA</label>
+                <br />
+                <select asp-for="VgaId" asp-items="@(new SelectList(Model.Vgas, "ID", "Name", "Price"))" disabled="@(!(Model.SelectedVgaName == null || Model.SelectedVgaName == "")? "disabled" : null)">
+                    <option value="">Choose</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-default" disabled="@(!(Model.SelectedVgaName == null || Model.SelectedVgaName == "")? "disabled" : null)">Choose</button>
+            </div>
+        </form>
+
+        <form asp-page-handler="memory" method="post">
+            <div class="form-group">
+                <label class="control-label">Select Memory</label>
+                <br />
+                <select asp-for="MemoryId" asp-items="@(new SelectList(Model.Memories, "ID", "Name", "Price"))" disabled="@(!(Model.SelectedMemoryName == null || Model.SelectedMemoryName == "")? "disabled" : null)">
+                    <option value="">Choose</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-default" disabled="@(!(Model.SelectedMemoryName == null || Model.SelectedMemoryName == "")? "disabled" : null)">Choose</button>
+            </div>
+        </form>
+
+        <form asp-page-handler="monitor" method="post">
+            <div class="form-group">
+                <label class="control-label">Select Monitor</label>
+                <br />
+                <select asp-for="MonitorId" asp-items="@(new SelectList(Model.Monitors, "ID", "Name", "Price"))" disabled="@(!(Model.SelectedMonitorName == null || Model.SelectedMonitorName == "")? "disabled" : null)">
+                    <option value="">Choose</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-default" disabled="@(!(Model.SelectedMonitorName == null || Model.SelectedMonitorName == "")? "disabled" : null)">Choose</button>
+            </div>
+        </form>
+
+        <form asp-page-handler="motherboard" method="post">
+            <div class="form-group">
+                <label class="control-label">Select Motherboard</label>
+                <br />
+                <select asp-for="MotherboardId" asp-items="@(new SelectList(Model.Motherboards, "ID", "Name", "Price"))" disabled="@(!(Model.SelectedMotherboardName == null || Model.SelectedMotherboardName == "")? "disabled" : null)">
+                    <option value="">Choose</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-default" disabled="@(!(Model.SelectedMotherboardName == null || Model.SelectedMotherboardName == "")? "disabled" : null)">Choose</button>
+            </div>
+        </form>
     </div>
 
-    <label class="control-label">Selected CPU</label>
-</form>
-
-<form asp-page-handler="vga" method="post">
-    <div class="form-group">
-        <label class="control-label">Select VGA</label>
-        <br />
-        <select asp-for="VgaId" asp-items="@(new SelectList(Model.Vgas, "ID", "Name", "Price"))">
-            <option value="">Choose</option>
-        </select>
+    <div class="col-md-4">
+        <div>
+            <form asp-page-handler="dropCpu" method="post">
+                <p>Selected CPU</p>
+                <p><strong>@Model.SelectedCpuName</strong></p>
+                <div class="form-group">
+                    <input type="submit" value="Drop" class="btn btn-default" disabled="@((Model.SelectedCpuName == null || Model.SelectedCpuName == "")? "disabled" : null)" />
+                </div>
+            </form>
+        </div>
+        <div>
+            <form asp-page-handler="dropVga" method="post">
+                <p>Selected VGA</p>
+                <p><strong>@Model.SelectedVgaName</strong></p>
+                <div class="form-group">
+                    <input type="submit" value="Drop" class="btn btn-default" disabled="@((Model.SelectedVgaName == null || Model.SelectedVgaName == "")? "disabled" : null)" />
+                </div>
+            </form>
+        </div>
+        <div>
+            <form asp-page-handler="dropMemory" method="post">
+                <p>Selected Memory</p>
+                <p><strong>@Model.SelectedMemoryName</strong></p>
+                <div class="form-group">
+                    <input type="submit" value="Drop" class="btn btn-default" disabled="@((Model.SelectedMemoryName == null || Model.SelectedMemoryName == "")? "disabled" : null)" />
+                </div>
+            </form>
+        </div>
+        <div>
+            <form asp-page-handler="dropMonitor" method="post">
+                <p>Selected Monitor</p>
+                <p><strong>@Model.SelectedMonitorName</strong></p>
+                <div class="form-group">
+                    <input type="submit" value="Drop" class="btn btn-default" disabled="@((Model.SelectedMonitorName == null || Model.SelectedMonitorName == "")? "disabled" : null)" />
+                </div>
+            </form>
+        </div>
+        <div>
+            <form asp-page-handler="dropMotherboard" method="post">
+                <p>Selected Motherboard</p>
+                <p><strong>@Model.SelectedMotherboardName</strong></p>
+                <div class="form-group">
+                    <input type="submit" value="Drop" class="btn btn-default" disabled="@((Model.SelectedMotherboardName == null || Model.SelectedMotherboardName == "")? "disabled" : null)" />
+                </div>
+            </form>
+        </div>
+        <hr style="width: 100%; color: black; height: 1px; background-color:black;" />
+        <div>
+            <form asp-page-handler="computerToCart" method="post">
+                <div class="form-group">
+                    <input type="submit" value="Add to Cart" class="btn btn-primary btn-lg" disabled="@(!Model.IsAllSelected ? "disabled" : null)" />
+                </div>
+            </form>
+        </div>
     </div>
-    <div class="form-group">
-        <button class="btn btn-default">Choose</button>
-    </div>
-</form>
-
-<form asp-page-handler="memory" method="post">
-    <div class="form-group">
-        <label class="control-label">Select Memory</label>
-        <br />
-        <select asp-for="MemoryId" asp-items="@(new SelectList(Model.Memories, "ID", "Name", "Price"))">
-            <option value="">Choose</option>
-        </select>
-    </div>
-    <div class="form-group">
-        <button class="btn btn-default">Choose</button>
-    </div>
-</form>
-
-<form asp-page-handler="monitor" method="post">
-    <div class="form-group">
-        <label class="control-label">Select Monitor</label>
-        <br/>
-        <select asp-for="MonitorId" asp-items="@(new SelectList(Model.Monitors, "ID", "Name", "Price"))">
-            <option value="">Choose</option>
-        </select>
-    </div>
-    <div class="form-group">
-        <button class="btn btn-default">Choose</button>
-    </div>
-</form>
-
-<form asp-page-handler="motherboard" method="post">
-    <div class="form-group">
-        <label class="control-label">Select Motherboard</label>
-        <br />
-        <select asp-for="MotherboardId" asp-items="@(new SelectList(Model.Motherboards, "ID", "Name", "Price"))">
-            <option value="">Choose</option>
-        </select>
-    </div>
-    <div class="form-group">
-        <button class="btn btn-default">Choose</button>
-    </div>
-</form>
+</div>

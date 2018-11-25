@@ -15,29 +15,66 @@ namespace ComputerShop.Pages
     {
         private readonly ShopContext context;
         private readonly ISession session;
+        private const String CART_KEY = "cart";
 
-        public List<ShoppingCartDTO> ShoppingCartData { get; set; }
+        public List<ProductOrderDTO> ShoppingCartData { get; set; }
+
+        [BindProperty]
+        public Customer Customer { get; set; }
 
         public ShoppingCartModel(ShopContext _context, IHttpContextAccessor httpContextAccessor)
         {
             context = _context;
             session = httpContextAccessor.HttpContext.Session;
-            ShoppingCartData = new List<ShoppingCartDTO>();
+            ShoppingCartData = new List<ProductOrderDTO>();
+            Customer = new Customer();
         }
 
         public void OnGet()
         {
-            IEnumerable<string> keystrings = session.Keys;
-            if (keystrings.Count() != 0)
+            ShoppingCartData = ShoppingCartDTO.Cart;
+        }
+        // disable ...
+        public IActionResult OnPost()
+        {
+            // Add customer to databse if hasn't ordered anything yet.
+
+            //context.Customer.Add(Customer);
+            //context.SaveChanges();
+
+            // Create an order
+            Order order = new Order();
+            order.Date = DateTime.Today;
+
+            Customer.Orders.Add(order);
+            context.Order.Add(order);
+           
+            //context.SaveChanges();
+
+            // Create the orderitems
+            foreach (ProductOrderDTO dto in ShoppingCartDTO.Cart)
             {
-                foreach (string key in keystrings)
-                {
-                    ShoppingCartDTO dto = JsonConvert.DeserializeObject<ShoppingCartDTO>(session.GetString(key));
-                    ShoppingCartData.Add(dto);
-                }
+                OrderItem orderItem = new OrderItem();
+                orderItem.order = order;
+                orderItem.product = dto.Product;
+                orderItem.quantity = dto.Quantity;
+                order.OrderItems.Add(orderItem);
             }
+
             
 
+            // Empty the cart.
+            ShoppingCartDTO.Cart.Clear();
+            session.Remove("cart");
+
+            return RedirectToAction("OnGet");
+        }
+
+        public IActionResult OnPostEmptyCart()
+        {
+            ShoppingCartDTO.Cart.Clear();
+            session.Remove("cart");
+            return RedirectToAction("OnGet");
         }
     }
 }

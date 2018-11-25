@@ -6,21 +6,28 @@ using System.Threading.Tasks;
 
 namespace ComputerShop.DTO
 {
+
     public class ShoppingCartDTO
     {
-        public Product Product { get; set; }
-        public int quantity { get; set; }
-        public int price { get; set; }
+        public static List<ProductOrderDTO> Cart { get; set; } = new List<ProductOrderDTO>();
 
         public ShoppingCartDTO()
         {
         }
 
-        public ShoppingCartDTO(Product _Product, int _quantity)
+        public ShoppingCartDTO(ProductOrderDTO ProductOrderDto)
         {
-            Product = _Product;
-            quantity = _quantity;
-            this.price = this.quantity * this.Product.Price;
+            Cart.Add(ProductOrderDto);
+        }
+
+        public void Add(ProductOrderDTO ProductOrderDto)
+        {
+            Cart.Add(ProductOrderDto);
+        }
+
+        public void ClearCart()
+        {
+            Cart.Clear();
         }
     }
 }
